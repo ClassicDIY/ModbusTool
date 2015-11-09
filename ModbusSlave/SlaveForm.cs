@@ -95,8 +95,10 @@ namespace ModbusSlave
                         _thread = new Thread(Worker);
                         _thread.Start();
                         AppendLog(String.Format("Listening to TCP port {0}", TCPPort));
-                        //broadcasrter = new UDPBroadcaster();
-                        //broadcasrter.SendDatagrams(TCPPort);
+
+                        // simulate classic
+                        broadcasrter = new UDPBroadcaster();
+                        broadcasrter.SendDatagrams(TCPPort);
                         break;
                 }
             }
@@ -134,8 +136,9 @@ namespace ModbusSlave
                     Thread.Sleep(1);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                String msg = ex.Message;
             }
 
         }

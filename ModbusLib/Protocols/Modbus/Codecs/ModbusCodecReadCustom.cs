@@ -10,9 +10,9 @@ namespace ModbusLib.Protocols
             ModbusCommand command,
             ByteArrayWriter body)
         {
-            //ModbusCodecBase.PushRequestHeader(
-            //    command,
-            //    body);
+            ModbusCodecBase.PushRequestHeader(
+                command,
+                body);
         }
 
 
@@ -20,10 +20,10 @@ namespace ModbusLib.Protocols
             ModbusCommand command,
             ByteArrayReader body)
         {
-            //var count = body.ReadByte() / 2;
-            //command.Data = new ushort[count];
-            //for (int i = 0; i < count; i++)
-            //    command.Data[i] = body.ReadUInt16BE();
+            var count = body.ReadByte() / 2;
+            command.Data = new ushort[count];
+            for (int i = 0; i < count; i++)
+                command.Data[i] = body.ReadUInt16BE();
         }
 
         #endregion
@@ -61,9 +61,17 @@ namespace ModbusLib.Protocols
             }
             else if (_category == 2)
             {
-                for (int i = 0; i < count/2; i++)
+                for (int i = 0; i < count / 2; i++)
                 {
-                    body.WriteUInt16BE((UInt16)GetRandomNumber(0, 5)); 
+                    body.WriteUInt16BE((UInt16)GetRandomNumber(0, 5));
+                }
+
+            }
+            else 
+            {
+                for (int i = 0; i < count / 2; i++)
+                {
+                    body.WriteUInt16BE((UInt16)GetRandomNumber(0, 50));
                 }
 
             }
