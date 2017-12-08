@@ -109,7 +109,7 @@
       <Name>Modbus.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\ModbusLib\ModbusLib.csproj">
-      <Project>{85C7E0A0-B14A-40C8-AD52-2475111AE822}</Project>
+      <Project>{85c7e0a0-b14a-40c8-ad52-2475111ae822}</Project>
       <Name>ModbusLib</Name>
     </ProjectReference>
   </ItemGroup>

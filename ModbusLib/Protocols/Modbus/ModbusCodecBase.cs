@@ -67,7 +67,14 @@ namespace ModbusLib.Protocols
             ByteArrayWriter body)
         {
             body.WriteUInt16BE((ushort)command.Offset);
-            body.WriteInt16BE((short)command.Count);
+            if (command.FunctionCode == 05 || command.FunctionCode == 06)
+            {
+                body.WriteInt16BE((short)command.Data[0]);
+            }
+            else
+            {
+                body.WriteInt16BE((short)command.Count);
+            }
         }
 
 
