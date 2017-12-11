@@ -75,9 +75,7 @@ namespace ModbusLib.Protocols
             command.QueryTotalLength += 2;
 
             command.Data = new ushort[1];
-            command.Data[0] = body.ReadUInt16BE() != 0
-                ? (ushort)0xFFFF
-                : (ushort)0;
+            command.Data[0] = body.ReadUInt16BE();
         }
 
         #endregion
