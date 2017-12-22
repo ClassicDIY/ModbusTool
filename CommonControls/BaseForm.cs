@@ -17,7 +17,6 @@ namespace Modbus.Common
         private CommunicationMode _communicationMode = CommunicationMode.TCP;
         protected Socket _socket;
         protected readonly UInt16[] _registerData;
-        protected int _displayCtrlCount;
         private bool _logPaused = false;
 
         #region Form 

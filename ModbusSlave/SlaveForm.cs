@@ -337,7 +337,7 @@ namespace ModbusSlave
         private void DoWrite(ModbusCommand command)
         {
             var dataAddress = command.Offset;
-            if (dataAddress < StartAddress || dataAddress > StartAddress + _displayCtrlCount)
+            if (dataAddress < StartAddress || dataAddress > StartAddress + DataLength)
             {
                 AppendLog(String.Format("Received address is not within viewable range, Received address:{0}.", dataAddress));
                 return;
