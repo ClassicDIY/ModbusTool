@@ -110,6 +110,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
             }
         }
         "Release"
@@ -164,7 +172,7 @@
                 {
                 "Name" = "8:.NET Framework"
                 "Message" = "8:[VSDNETMSG]"
-                "FrameworkVersion" = "8:.NETFramework,Version=v4.5"
+                "FrameworkVersion" = "8:.NETFramework,Version=v4.5.2"
                 "AllowLaterVersions" = "11:FALSE"
                 "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=395269"
                 }
@@ -353,7 +361,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ModbusTool"
         "ProductCode" = "8:{383556CA-16FD-4BBB-89C9-5E185B750ACF}"
-        "PackageCode" = "8:{742260FB-F9AB-409C-A355-BD9DD11367BB}"
+        "PackageCode" = "8:{7DEB3102-2BBE-4283-B50C-90A2F6483957}"
         "UpgradeCode" = "8:{7D7D77ED-D9DE-4C93-B7AD-264588E42392}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
