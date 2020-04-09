@@ -77,7 +77,7 @@ namespace ModbusLib.Protocols
 
             var count = body.ReadByte() / 2;
             command.Data = new ushort[count];
-            command.QueryTotalLength += (count + 3);
+            command.QueryTotalLength += (count * 2 + 3);
 
             for (int i = 0; i < count; i++)
                 command.Data[i] = body.ReadUInt16BE();
