@@ -5,6 +5,7 @@
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/ClassicDIY/ModbusTool?style=for-the-badge)](https://github.com/ClassicDIY/ModbusTool/releases)
 [![GitHub stars](https://img.shields.io/github/stars/ClassicDIY/ModbusTool?style=for-the-badge)](https://github.com/ClassicDIY/ModbusTool/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues-raw/ClassicDIY/ModbusTool?style=for-the-badge)](https://github.com/ClassicDIY/ModbusTool/issues)
+![GitHub](https://img.shields.io/github/license/ClassicDIY/ModbusTool?style=for-the-badge)
 [![https://www.buymeacoffee.com/r4K2HIB](https://img.shields.io/badge/Donate-Buy%20Me%20a%20coffee-orange?style=for-the-badge)](https://www.buymeacoffee.com/r4K2HIB)
 
 <p align="center">
