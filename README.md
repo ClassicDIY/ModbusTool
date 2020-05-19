@@ -10,6 +10,10 @@
 [![GitHub issues](https://img.shields.io/github/issues-raw/ClassicDIY/ModbusTool?style=for-the-badge)](https://github.com/ClassicDIY/ModbusTool/issues)
 [![GitHub](https://img.shields.io/github/license/ClassicDIY/ModbusTool?style=for-the-badge)](https://github.com/ClassicDIY/ModbusTool/blob/master/LICENSE)
 
+<p>
+Please refer to the <a href="https://github.com/ClassicDIY/ModbusTool/wiki">ModbusTool wiki</a> for the installation procedure.
+</p>
+
 <p align="center">
 <img src="./Pictures/Slave.PNG" width="600"/>
 </p>
