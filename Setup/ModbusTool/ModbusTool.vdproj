@@ -15,32 +15,20 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_014F6A6E24500180100F15C15BF3CE9B"
+        "OwnerKey" = "8:_7863574F3047416F97162D368F5A37F1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_014F6A6E24500180100F15C15BF3CE9B"
+        "OwnerKey" = "8:_8FC32883FCA44B838F587139E8E5FBA5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_0D5337D4F71B4024908169444EF8235C"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_4EC63FFBFC12CFAEC2AA95E99149EF17"
-        "OwnerKey" = "8:_7863574F3047416F97162D368F5A37F1"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_4EC63FFBFC12CFAEC2AA95E99149EF17"
-        "OwnerKey" = "8:_8FC32883FCA44B838F587139E8E5FBA5"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_69C1162A0CDE0BA8A9C66E68D9389C22"
-        "OwnerKey" = "8:_7863574F3047416F97162D368F5A37F1"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_69C1162A0CDE0BA8A9C66E68D9389C22"
-        "OwnerKey" = "8:_8FC32883FCA44B838F587139E8E5FBA5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -63,6 +51,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_DE43206BBD2666044EF89DDCAB7E14F0"
+        "OwnerKey" = "8:_7863574F3047416F97162D368F5A37F1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DE43206BBD2666044EF89DDCAB7E14F0"
+        "OwnerKey" = "8:_8FC32883FCA44B838F587139E8E5FBA5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_7863574F3047416F97162D368F5A37F1"
         "MsmSig" = "8:_UNDEFINED"
@@ -76,13 +76,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_69C1162A0CDE0BA8A9C66E68D9389C22"
+        "OwnerKey" = "8:_DE43206BBD2666044EF89DDCAB7E14F0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4EC63FFBFC12CFAEC2AA95E99149EF17"
+        "OwnerKey" = "8:_014F6A6E24500180100F15C15BF3CE9B"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -180,6 +180,37 @@
         }
         "File"
         {
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_014F6A6E24500180100F15C15BF3CE9B"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Modbus.Common, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_014F6A6E24500180100F15C15BF3CE9B"
+                    {
+                    "Name" = "8:Modbus.Common.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Modbus.Common.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_85BB8A8B169440968CA0E59D16D1565F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:TRUE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0D5337D4F71B4024908169444EF8235C"
             {
             "SourcePath" = "8:..\\..\\ModbusSlave\\Server.ico"
@@ -200,68 +231,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4EC63FFBFC12CFAEC2AA95E99149EF17"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Modbus.Common, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_4EC63FFBFC12CFAEC2AA95E99149EF17"
-                    {
-                    "Name" = "8:Modbus.Common.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Modbus.Common.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_85BB8A8B169440968CA0E59D16D1565F"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_69C1162A0CDE0BA8A9C66E68D9389C22"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ModbusLib, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_69C1162A0CDE0BA8A9C66E68D9389C22"
-                    {
-                    "Name" = "8:ModbusLib.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:ModbusLib.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_85BB8A8B169440968CA0E59D16D1565F"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BD5A154BDBC34CDD94DBB4B79A4C7492"
             {
             "SourcePath" = "8:..\\..\\ModbusMaster\\Desktop.ico"
@@ -280,6 +249,37 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DE43206BBD2666044EF89DDCAB7E14F0"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:ModbusLib, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_DE43206BBD2666044EF89DDCAB7E14F0"
+                    {
+                    "Name" = "8:ModbusLib.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:ModbusLib.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_85BB8A8B169440968CA0E59D16D1565F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:TRUE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
         }
@@ -361,7 +361,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ModbusTool"
         "ProductCode" = "8:{383556CA-16FD-4BBB-89C9-5E185B750ACF}"
-        "PackageCode" = "8:{7DEB3102-2BBE-4283-B50C-90A2F6483957}"
+        "PackageCode" = "8:{4479FD2E-4ADE-4408-9AD4-D552472C5737}"
         "UpgradeCode" = "8:{7D7D77ED-D9DE-4C93-B7AD-264588E42392}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

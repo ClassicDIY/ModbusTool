@@ -76,10 +76,10 @@
     <StartupObject>ModbusSlave.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>ACB604FF13666F9BE6BCD975B50327D813414D22</ManifestCertificateThumbprint>
