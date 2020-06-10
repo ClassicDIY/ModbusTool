@@ -97,6 +97,9 @@
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>ModbusSlave_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ModbusSlave.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -145,6 +148,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ModbusSlave.ico" />
     <Content Include="Server.ico" />
   </ItemGroup>
   <ItemGroup>

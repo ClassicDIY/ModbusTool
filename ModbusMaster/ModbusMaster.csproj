@@ -93,6 +93,9 @@
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>ModbusMaster_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ModbusMaster.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -142,6 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Desktop.ico" />
+    <Content Include="ModbusMaster.ico" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CommonControls\Modbus.Common.csproj">
