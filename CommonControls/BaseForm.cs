@@ -646,6 +646,10 @@ namespace Modbus.Common
                 return;
             }
             CurrentTab.RefreshData();
+
+            //  Reset event handler
+            CurrentTab.OnApply -= dataTab_OnApply;
+            CurrentTab.OnApply += dataTab_OnApply;
         }
 
         public void UpdateDataTable()
