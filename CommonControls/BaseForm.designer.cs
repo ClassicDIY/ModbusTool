@@ -39,6 +39,7 @@
             this.textBoxSlaveID = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.radioButtonLED = new System.Windows.Forms.RadioButton();
+            this.radioButtonReverseFloat = new System.Windows.Forms.RadioButton();
             this.radioButtonInteger = new System.Windows.Forms.RadioButton();
             this.radioButtonHex = new System.Windows.Forms.RadioButton();
             this.radioButtonBinary = new System.Windows.Forms.RadioButton();
@@ -67,22 +68,22 @@
             this.textBoxPort = new System.Windows.Forms.TextBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.grpExchange = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new Modbus.Common.TabControlEx();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataTab1 = new Modbus.Common.DataTab();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataTab2 = new Modbus.Common.DataTab();
-            this.grpExchange = new System.Windows.Forms.GroupBox();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.grpStart.SuspendLayout();
             this.groupBoxRTU.SuspendLayout();
             this.groupBoxMode.SuspendLayout();
             this.groupBoxTCP.SuspendLayout();
+            this.grpExchange.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.grpExchange.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox4
@@ -163,12 +164,13 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.radioButtonLED);
+            this.groupBox3.Controls.Add(this.radioButtonReverseFloat);
             this.groupBox3.Controls.Add(this.radioButtonInteger);
             this.groupBox3.Controls.Add(this.radioButtonHex);
             this.groupBox3.Controls.Add(this.radioButtonBinary);
             this.groupBox3.Location = new System.Drawing.Point(7, 144);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(166, 110);
+            this.groupBox3.Size = new System.Drawing.Size(285, 110);
             this.groupBox3.TabIndex = 21;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Display Format";
@@ -183,13 +185,23 @@
             this.radioButtonLED.Text = "LED";
             this.radioButtonLED.Click += new System.EventHandler(this.RadioButtonDisplayFormatCheckedChanged);
             // 
+            // radioButtonReverseFloat
+            // 
+            this.radioButtonReverseFloat.Location = new System.Drawing.Point(105, 47);
+            this.radioButtonReverseFloat.Name = "radioButtonReverseFloat";
+            this.radioButtonReverseFloat.Size = new System.Drawing.Size(96, 21);
+            this.radioButtonReverseFloat.TabIndex = 5;
+            this.radioButtonReverseFloat.Tag = "FloatReverse";
+            this.radioButtonReverseFloat.Text = "FloatReverse";
+            this.radioButtonReverseFloat.Click += new System.EventHandler(this.RadioButtonDisplayFormatCheckedChanged);
+            // 
             // radioButtonInteger
             // 
             this.radioButtonInteger.Checked = true;
-            this.radioButtonInteger.Location = new System.Drawing.Point(13, 81);
+            this.radioButtonInteger.Location = new System.Drawing.Point(105, 20);
             this.radioButtonInteger.Name = "radioButtonInteger";
             this.radioButtonInteger.Size = new System.Drawing.Size(67, 21);
-            this.radioButtonInteger.TabIndex = 2;
+            this.radioButtonInteger.TabIndex = 4;
             this.radioButtonInteger.TabStop = true;
             this.radioButtonInteger.Tag = "Integer";
             this.radioButtonInteger.Text = "Integer";
@@ -200,7 +212,7 @@
             this.radioButtonHex.Location = new System.Drawing.Point(13, 61);
             this.radioButtonHex.Name = "radioButtonHex";
             this.radioButtonHex.Size = new System.Drawing.Size(67, 20);
-            this.radioButtonHex.TabIndex = 1;
+            this.radioButtonHex.TabIndex = 3;
             this.radioButtonHex.Tag = "Hex";
             this.radioButtonHex.Text = "Hex";
             this.radioButtonHex.Click += new System.EventHandler(this.RadioButtonDisplayFormatCheckedChanged);
@@ -210,7 +222,7 @@
             this.radioButtonBinary.Location = new System.Drawing.Point(13, 40);
             this.radioButtonBinary.Name = "radioButtonBinary";
             this.radioButtonBinary.Size = new System.Drawing.Size(67, 21);
-            this.radioButtonBinary.TabIndex = 0;
+            this.radioButtonBinary.TabIndex = 2;
             this.radioButtonBinary.Tag = "Binary";
             this.radioButtonBinary.Text = "Binary";
             this.radioButtonBinary.Click += new System.EventHandler(this.RadioButtonDisplayFormatCheckedChanged);
@@ -242,7 +254,7 @@
             this.grpStart.Controls.Add(this.groupBoxTCP);
             this.grpStart.Location = new System.Drawing.Point(7, 12);
             this.grpStart.Name = "grpStart";
-            this.grpStart.Size = new System.Drawing.Size(665, 126);
+            this.grpStart.Size = new System.Drawing.Size(677, 126);
             this.grpStart.TabIndex = 18;
             this.grpStart.TabStop = false;
             this.grpStart.Text = "Communication";
@@ -479,6 +491,20 @@
             // 
             this.openFileDialog.FileName = "openFileDialog1";
             // 
+            // grpExchange
+            // 
+            this.grpExchange.Controls.Add(this.buttonImport);
+            this.grpExchange.Controls.Add(this.textBoxSlaveID);
+            this.grpExchange.Controls.Add(this.buttonExport);
+            this.grpExchange.Controls.Add(this.label1);
+            this.grpExchange.Controls.Add(this.label7);
+            this.grpExchange.Controls.Add(this.textBoxSlaveDelay);
+            this.grpExchange.Location = new System.Drawing.Point(571, 144);
+            this.grpExchange.Name = "grpExchange";
+            this.grpExchange.Size = new System.Drawing.Size(289, 110);
+            this.grpExchange.TabIndex = 36;
+            this.grpExchange.TabStop = false;
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -514,7 +540,6 @@
             this.dataTab1.Size = new System.Drawing.Size(839, 406);
             this.dataTab1.StartAddress = ((ushort)(4100));
             this.dataTab1.TabIndex = 0;
-            this.dataTab1.OnApply += dataTab_OnApply;
             // 
             // tabPage2
             // 
@@ -538,21 +563,6 @@
             this.dataTab2.Size = new System.Drawing.Size(839, 406);
             this.dataTab2.StartAddress = ((ushort)(4100));
             this.dataTab2.TabIndex = 0;
-            this.dataTab2.OnApply += dataTab_OnApply;
-            // 
-            // grpExchange
-            // 
-            this.grpExchange.Controls.Add(this.buttonImport);
-            this.grpExchange.Controls.Add(this.textBoxSlaveID);
-            this.grpExchange.Controls.Add(this.buttonExport);
-            this.grpExchange.Controls.Add(this.label1);
-            this.grpExchange.Controls.Add(this.label7);
-            this.grpExchange.Controls.Add(this.textBoxSlaveDelay);
-            this.grpExchange.Location = new System.Drawing.Point(571, 144);
-            this.grpExchange.Name = "grpExchange";
-            this.grpExchange.Size = new System.Drawing.Size(289, 110);
-            this.grpExchange.TabIndex = 36;
-            this.grpExchange.TabStop = false;
             // 
             // BaseForm
             // 
@@ -578,11 +588,11 @@
             this.groupBoxMode.PerformLayout();
             this.groupBoxTCP.ResumeLayout(false);
             this.groupBoxTCP.PerformLayout();
+            this.grpExchange.ResumeLayout(false);
+            this.grpExchange.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.grpExchange.ResumeLayout(false);
-            this.grpExchange.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -633,5 +643,6 @@
         protected System.Windows.Forms.GroupBox grpExchange;
         protected System.Windows.Forms.Button buttonPauseLog;
         protected TabControlEx tabControl1;
+        protected System.Windows.Forms.RadioButton radioButtonReverseFloat;
     }
 }
