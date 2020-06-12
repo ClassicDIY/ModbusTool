@@ -1,7 +1,9 @@
 # ModbusTool
 ## A modbus TCP and RTU master and slave tool with import and export functionality.
 
-|If you find this project useful or interesting, please help support further development!|[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/donate/?token=ujPa7RERQZhNZKCdWB_BCvQi7Wv43j7ZffsEqVqdVUcGQcbNZ0Ov1Dy-ZhgALX8rstQBZW&country.x=US&locale.x=)|
+[![https://www.buymeacoffee.com/r4K2HIB](https://img.shields.io/badge/Donate-Buy%20Me%20a%20coffee-orange?style=for-the-badge)](https://www.buymeacoffee.com/r4K2HIB)
+
+|If you find this project useful or interesting, please help support further development!|[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=graham.a.ross%40gmail.com&currency_code=CAD&source=url)|
 |---|---|
 
 [![GitHub All Releases](https://img.shields.io/github/downloads/ClassicDIY/ModbusTool/total?style=for-the-badge)](https://github.com/ClassicDIY/ModbusTool/releases)
