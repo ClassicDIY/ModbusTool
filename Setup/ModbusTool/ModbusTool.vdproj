@@ -312,7 +312,7 @@
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_85BB8A8B169440968CA0E59D16D1565F"
                     {
                     "Name" = "8:ModbusTool"
-                    "AlwaysCreate" = "11:FALSE"
+                    "AlwaysCreate" = "11:TRUE"
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
                     "Property" = "8:_7379CF0BCA684FF3A7E89E175E4B6D86"
@@ -361,7 +361,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ModbusTool"
         "ProductCode" = "8:{383556CA-16FD-4BBB-89C9-5E185B750ACF}"
-        "PackageCode" = "8:{053C436C-4E2C-46BD-A2F6-70B925461FBB}"
+        "PackageCode" = "8:{6C8B142D-4A1C-4D12-B618-354D3EC7B078}"
         "UpgradeCode" = "8:{7D7D77ED-D9DE-4C93-B7AD-264588E42392}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
