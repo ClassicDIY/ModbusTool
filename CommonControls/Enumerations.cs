@@ -10,8 +10,7 @@ namespace Modbus.Common
         LED,
         Binary,
         Hex,
-        Integer,
-        FloatReverse
+        Integer
     }
 
     public enum CommunicationMode

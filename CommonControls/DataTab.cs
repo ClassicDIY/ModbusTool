@@ -33,9 +33,7 @@ namespace Modbus.Common
                         string str = txtStartAdress.Text.Replace("0x", "");
                         rVal = Convert.ToUInt16(str, 16);
                     }
-                    // bugfix "not accepting hex register address"
-                    else
-                        rVal = Convert.ToUInt16(txtStartAdress.Text);
+                    rVal = Convert.ToUInt16(txtStartAdress.Text);
                 }
                 catch (Exception)
                 {
@@ -98,7 +96,7 @@ namespace Modbus.Common
 
         public event EventHandler OnApply;
 
-        public ushort[] RegisterData { get; set; }
+        public UInt16[] RegisterData { get; set; }
         public DisplayFormat DisplayFormat { get; set; }
 
         #endregion
@@ -108,17 +106,16 @@ namespace Modbus.Common
         public void RefreshData()
         {
             // Create as many textboxes as fit into window
-            groupBoxData.Visible = false;
             groupBoxData.Controls.Clear();
-            var idxControl = 0;
-            var screenX = 10;
-            var screenY = 20;
-            while (screenX < groupBoxData.Size.Width - 100)
+            var x = 0;
+            var y = 10;
+            var z = 20;
+            while (y < groupBoxData.Size.Width - 100)
             {
                 var labData = new Label();
                 groupBoxData.Controls.Add(labData);
                 labData.Size = new Size(40, 20);
-                labData.Location = new Point(screenX, screenY);
+                labData.Location = new Point(y, z);
                 labData.Font = new Font("Calibri", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
                 switch (DisplayFormat)
                 {
@@ -126,95 +123,69 @@ namespace Modbus.Common
                         var bulb = new LedBulb();
                         groupBoxData.Controls.Add(bulb);
                         bulb.Size = new Size(25, 25);
-                        bulb.Location = new Point(screenX + 40, screenY - 5);
+                        bulb.Location = new Point(y + 40, z - 5);
                         bulb.Padding = new Padding(3);
                         bulb.Color = Color.Red;
                         bulb.On = false;
-                        bulb.Tag = idxControl;
+                        bulb.Tag = x;
                         bulb.Click += BulbClick;
-                        screenY = screenY + bulb.Size.Height + 10;
-                        labData.Text = Convert.ToString(idxControl);
+                        z = z + bulb.Size.Height + 10;
+                        labData.Text = Convert.ToString(x);
                         break;
                     case DisplayFormat.Binary:
                         var txtDataB = new TextBox();
                         groupBoxData.Controls.Add(txtDataB);
                         txtDataB.Size = new Size(110, 20);
-                        txtDataB.Location = new Point(screenX + 40, screenY - 2);
+                        txtDataB.Location = new Point(y + 40, z - 2);
                         txtDataB.TextAlign = HorizontalAlignment.Right;
-                        txtDataB.Tag = idxControl;
+                        txtDataB.Tag = x;
                         txtDataB.Leave += TxtDataBinaryLeave;
                         txtDataB.Enter += txtData_Enter;
                         txtDataB.KeyPress += txtDataBinaryKeyPress;
                         txtDataB.MaxLength = 16;
-                        screenY = screenY + txtDataB.Size.Height + 5;
-                        labData.Text = Convert.ToString(StartAddress + idxControl);
+                        z = z + txtDataB.Size.Height + 5;
+                        labData.Text = Convert.ToString(StartAddress + x);
                         break;
                     case DisplayFormat.Hex:
                         var txtDataH = new TextBox();
                         groupBoxData.Controls.Add(txtDataH);
                         txtDataH.Size = new Size(55, 20);
-                        txtDataH.Location = new Point(screenX + 40, screenY - 2);
+                        txtDataH.Location = new Point(y + 40, z - 2);
                         txtDataH.TextAlign = HorizontalAlignment.Right;
-                        txtDataH.Tag = idxControl;
+                        txtDataH.Tag = x;
                         txtDataH.MaxLength = 5;
                         txtDataH.Leave += TxtDataHexLeave;
                         txtDataH.Enter += txtData_Enter;
                         txtDataH.KeyPress += txtDataHexKeyPress;
-                        screenY = screenY + txtDataH.Size.Height + 5;
-                        labData.Text = Convert.ToString(StartAddress + idxControl);
+                        z = z + txtDataH.Size.Height + 5;
+                        labData.Text = Convert.ToString(StartAddress + x);
                         break;
                     case DisplayFormat.Integer:
                         var txtData = new TextBox();
                         groupBoxData.Controls.Add(txtData);
                         txtData.Size = new Size(55, 20);
-                        txtData.Location = new Point(screenX + 40, screenY - 2);
+                        txtData.Location = new Point(y + 40, z - 2);
                         txtData.TextAlign = HorizontalAlignment.Right;
-                        txtData.Tag = idxControl;
+                        txtData.Tag = x;
                         txtData.MaxLength = 5;
                         txtData.Leave += TxtDataLeave;
                         txtData.Enter += txtData_Enter;
                         txtData.KeyPress += txtDataIntegerKeyPress;
-                        screenY = screenY + txtData.Size.Height + 5;
-                        labData.Text = Convert.ToString(StartAddress + idxControl);
-                        break;
-                    case DisplayFormat.FloatReverse:
-                        // Float values require two registers, thus skip every second control
-                        // hide even controls
-                        labData.Text = Convert.ToString(StartAddress + idxControl);
-                        if ((idxControl & 1) == 0)
-                        {
-                            var txtFloatReverse = new TextBox();
-                            groupBoxData.Controls.Add(txtFloatReverse);
-                            txtFloatReverse.Size = new Size(55, 40);
-                            txtFloatReverse.Location = new Point(screenX + 40, screenY - 2);
-                            txtFloatReverse.TextAlign = HorizontalAlignment.Right;
-                            txtFloatReverse.Tag = idxControl;
-                            txtFloatReverse.MaxLength = 5;
-                            txtFloatReverse.Leave += TxtFloatReverseLeave;
-                            txtFloatReverse.Enter += TxtFloatReverse_Enter;
-                            txtFloatReverse.KeyPress += txtDataFloatReverseKeyPress;
-                            screenY = screenY + txtFloatReverse.Size.Height *2 + 10; // Float Values Require Two Registers
-                            labData.Visible = true;
-                        }
-                        else
-                        {
-                            labData.Visible = false;
-                        }
+                        z = z + txtData.Size.Height + 5;
+                        labData.Text = Convert.ToString(StartAddress + x);
                         break;
                 }
 
-                idxControl++;
-                if (screenY > groupBoxData.Size.Height - 30)
+                x++;
+                if (z > groupBoxData.Size.Height - 30)
                 {
                     var inc = DisplayFormat == DisplayFormat.Binary ? 200 : 100;
-                    screenX = screenX + inc;
-                    screenY = 20;
+                    y = y + inc;
+                    z = 20;
                 }
             }
-            _displayCtrlCount = idxControl;
+            _displayCtrlCount = x;
             UpdateDataTable();
-            groupBoxData.Visible = true;
-
         }
 
         void txtDataBinaryKeyPress(object sender, KeyPressEventArgs e)
@@ -245,22 +216,7 @@ namespace Modbus.Common
             e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != Delete;
         }
 
-        void txtDataFloatReverseKeyPress(object sender, KeyPressEventArgs e)
-        {
-            const char Delete = (char)8;
-            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != Delete && e.KeyChar != NumberFormatInfo.CurrentInfo.NumberDecimalSeparator[0];
-        }
-
         void txtData_Enter(object sender, EventArgs e)
-        {
-            var textBox = (TextBox)sender;
-            if (!String.IsNullOrEmpty(textBox.Text))
-            {
-                textBox.Clear();
-            }
-        }
-
-        void TxtFloatReverse_Enter(object sender, EventArgs e)
         {
             var textBox = (TextBox)sender;
             if (!String.IsNullOrEmpty(textBox.Text))
@@ -281,28 +237,6 @@ namespace Modbus.Common
             else
             {
                 textBox.Text = "0";
-            }
-        }
-
-        void TxtFloatReverseLeave(object sender, EventArgs e)
-        {
-            var textBox = (TextBox)sender;
-            var textBoxNumber = Int32.Parse(textBox.Tag.ToString());
-
-            float res;
-            if (float.TryParse(textBox.Text, out res))
-            {
-                var intRes = BitConverter.ToUInt32(BitConverter.GetBytes(res), 0);
-
-                var firstPart = (ushort) (intRes >> 16);
-                var secondPart = (ushort)(intRes & 0xFFFF);
-
-                RegisterData[StartAddress +     textBoxNumber] = firstPart;
-                RegisterData[StartAddress + 1 + textBoxNumber] = secondPart;
-            }
-            else
-            {
-                textBox.Text = "0.0";
             }
         }
 
@@ -362,10 +296,8 @@ namespace Modbus.Common
 
         public void UpdateDataTable()
         {
-            // for float values we need two registers for one value
-            // add one extra data value for the last control
-            var data = new uint[_displayCtrlCount+1];
-            for (int i = 0; i < _displayCtrlCount+1; i++)
+            var data = new ushort[_displayCtrlCount];
+            for (int i = 0; i < _displayCtrlCount; i++)
             {
                 var index = StartAddress + i;
                 if (index >= RegisterData.Length)
@@ -393,11 +325,6 @@ namespace Modbus.Common
                                 break;
                             case DisplayFormat.Integer:
                                 ctrl.Text = data[x].ToString(CultureInfo.InvariantCulture);
-                                break;
-                            case DisplayFormat.FloatReverse:
-                                uint twoWords = ((uint)data[x] << 16) + data[x + 1];
-                                float r = BitConverter.ToSingle(BitConverter.GetBytes(twoWords), 0);
-                                ctrl.Text = String.Format("{0:0.000}", r);
                                 break;
                         }
                         ctrl.Visible = true;
