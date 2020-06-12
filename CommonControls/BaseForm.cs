@@ -16,7 +16,7 @@ namespace Modbus.Common
         private DisplayFormat _displayFormat = DisplayFormat.Integer;
         private CommunicationMode _communicationMode = CommunicationMode.TCP;
         protected Socket _socket;
-        protected readonly UInt16[] _registerData;
+        protected readonly ushort[] _registerData;
         private bool _logPaused = false;
 
         #region Form 
@@ -24,7 +24,7 @@ namespace Modbus.Common
         public BaseForm()
         {
             InitializeComponent();
-            _registerData = new UInt16[65600];
+            _registerData = new ushort[65600];
         }
         
         private void BaseFormLoading(object sender, EventArgs e)
@@ -188,6 +188,9 @@ namespace Modbus.Common
                     break;
                 case DisplayFormat.LED:
                     radioButtonLED.Checked = true;
+                    break;
+                case DisplayFormat.FloatReverse:
+                    radioButtonReverseFloat.Checked = true;
                     break;
             }
         }
@@ -530,6 +533,9 @@ namespace Modbus.Common
                     case DisplayFormat.Integer:
                         radioButtonInteger.Checked = true;
                         break;
+                    case DisplayFormat.FloatReverse:
+                        radioButtonReverseFloat.Checked = true;
+                        break;
                 }
                 _displayFormat = value;
                 CurrentTab.DisplayFormat = DisplayFormat;
@@ -646,6 +652,10 @@ namespace Modbus.Common
                 return;
             }
             CurrentTab.RefreshData();
+
+            //  Reset event handler
+            CurrentTab.OnApply -= dataTab_OnApply;
+            CurrentTab.OnApply += dataTab_OnApply;
         }
 
         public void UpdateDataTable()
@@ -668,14 +678,14 @@ namespace Modbus.Common
             if (tab.Text.Equals("...") && tabControl1.TabPages.Count < 20)
             {
                 DataTab dataTab = new DataTab();
-                dataTab.DataLength = ((ushort)(256));
+                dataTab.DataLength = 256;
                 dataTab.DisplayFormat = DisplayFormat.Integer;
                 dataTab.Location = new Point(3, 3);
                 dataTab.Name = "dataTab" + (tabControl1.TabPages.Count+1);
                 dataTab.RegisterData = _registerData;
                 dataTab.ShowDataLength = ShowDataLength;
                 dataTab.Size = new Size(839, 406);
-                dataTab.StartAddress = ((ushort)(0));
+                dataTab.StartAddress = 0;
                 dataTab.TabIndex = 0;
                 dataTab.OnApply += dataTab_OnApply;
                 TabPage tabPage = new TabPage();

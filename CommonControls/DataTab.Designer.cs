@@ -50,7 +50,7 @@
             this.groupBox1.Controls.Add(this.groupBoxData);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(833, 396);
+            this.groupBox1.Size = new System.Drawing.Size(833, 386);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
             // 
@@ -115,7 +115,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxData.Location = new System.Drawing.Point(0, 44);
             this.groupBoxData.Name = "groupBoxData";
-            this.groupBoxData.Size = new System.Drawing.Size(833, 344);
+            this.groupBoxData.Size = new System.Drawing.Size(833, 332);
             this.groupBoxData.TabIndex = 17;
             this.groupBoxData.TabStop = false;
             // 
@@ -125,7 +125,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Name = "DataTab";
-            this.Size = new System.Drawing.Size(829, 406);
+            this.Size = new System.Drawing.Size(840, 395);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

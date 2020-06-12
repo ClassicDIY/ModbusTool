@@ -16,6 +16,8 @@ namespace ModbusMaster
         private ICommClient _portClient;
         private SerialPort _uart;
 
+        private byte _lastReadCommand = 0;
+
         #region Form
 
         public MasterForm()
@@ -142,6 +144,8 @@ namespace ModbusMaster
 
         private void ExecuteReadCommand(byte function)
         {
+            _lastReadCommand = function;
+
             try
             {
                 var command = new ModbusCommand(function) {Offset = StartAddress, Count = DataLength, TransId = _transactionId++};
@@ -240,5 +244,34 @@ namespace ModbusMaster
 
         #endregion
 
+        private void txtPollDelay_Leave(object sender, EventArgs e)
+        {
+            var textBox = (TextBox)sender;
+            if (int.TryParse(textBox.Text, out var parsedMillisecs))
+            {
+                pollTimer.Interval = parsedMillisecs;
+            }
+            else
+            {
+                textBox.Text = "0";
+                cbPoll.Checked = false;
+                pollTimer.Enabled = false;
+            }
+
+        }
+
+        private void cbPoll_CheckStateChanged(object sender, EventArgs e)
+        {
+            pollTimer.Enabled = cbPoll.Checked;
+
+            if (!pollTimer.Enabled)
+                _lastReadCommand = 0;
+        }
+
+        private void pollTimer_Tick(object sender, EventArgs e)
+        {
+            if (_lastReadCommand != 0)
+                ExecuteReadCommand(_lastReadCommand);
+        }
     }
 }
