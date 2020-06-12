@@ -189,6 +189,9 @@ namespace Modbus.Common
                 case DisplayFormat.LED:
                     radioButtonLED.Checked = true;
                     break;
+                case DisplayFormat.FloatReverse:
+                    radioButtonReverseFloat.Checked = true;
+                    break;
             }
         }
 
@@ -529,6 +532,9 @@ namespace Modbus.Common
                         break;
                     case DisplayFormat.Integer:
                         radioButtonInteger.Checked = true;
+                        break;
+                    case DisplayFormat.FloatReverse:
+                        radioButtonReverseFloat.Checked = true;
                         break;
                 }
                 _displayFormat = value;
