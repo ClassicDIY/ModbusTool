@@ -13,7 +13,6 @@ namespace ModbusSlave
     public partial class SlaveForm : BaseForm
     {
                     
-        private static UDPBroadcaster broadcasrter;
         private Function _function = Function.HoldingRegister;
         private ICommServer _listener;
         private SerialPort _uart;
@@ -23,16 +22,14 @@ namespace ModbusSlave
         
         public SlaveForm()
         {
+            base.ShowDataLength = false;
             InitializeComponent();
-            dataTab1.ShowDataLength = false;
-            dataTab2.ShowDataLength = false;
         }
 
         private void SlaveFormClosing(object sender, FormClosingEventArgs e)
         {
             SaveUserData();
             DoDisconnect();
-            //broadcasrter.Stop();
         }
 
         private void SlaveFormLoading(object sender, EventArgs e)
@@ -95,10 +92,6 @@ namespace ModbusSlave
                         _thread = new Thread(Worker);
                         _thread.Start();
                         AppendLog(String.Format("Listening to TCP port {0}", TCPPort));
-
-                        // simulate classic
-                        broadcasrter = new UDPBroadcaster();
-                        broadcasrter.SendDatagrams(TCPPort);
                         break;
                 }
             }

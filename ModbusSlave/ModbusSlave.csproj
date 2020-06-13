@@ -122,7 +122,6 @@
     <Compile Include="SlaveForm.Designer.cs">
       <DependentUpon>SlaveForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UDPBroadcaster.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

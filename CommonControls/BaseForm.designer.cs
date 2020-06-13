@@ -28,7 +28,11 @@
         /// </summary>
         protected void InitializeComponent()
         {
+            Modbus.Common.DataTab dataTab1;
+            Modbus.Common.DataTab dataTab2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseForm));
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.buttonPauseLog = new System.Windows.Forms.Button();
             this.listBoxCommLog = new System.Windows.Forms.ListBox();
@@ -70,10 +74,10 @@
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.grpExchange = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new Modbus.Common.TabControlEx();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataTab1 = new Modbus.Common.DataTab();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataTab2 = new Modbus.Common.DataTab();
+            dataTab1 = new Modbus.Common.DataTab();
+            dataTab2 = new Modbus.Common.DataTab();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.grpStart.SuspendLayout();
@@ -82,9 +86,54 @@
             this.groupBoxTCP.SuspendLayout();
             this.grpExchange.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // dataTab1
+            // 
+            dataTab1.DataLength = ((ushort)(127));
+            dataTab1.DisplayFormat = Modbus.Common.DisplayFormat.Integer;
+            dataTab1.Location = new System.Drawing.Point(3, 3);
+            dataTab1.Name = "dataTab1";
+            dataTab1.RegisterData = new ushort[0];
+            dataTab1.ShowDataLength = false;
+            dataTab1.Size = new System.Drawing.Size(839, 406);
+            dataTab1.StartAddress = ((ushort)(4100));
+            dataTab1.TabIndex = 0;
+            // 
+            // dataTab2
+            // 
+            dataTab2.DataLength = ((ushort)(127));
+            dataTab2.DisplayFormat = Modbus.Common.DisplayFormat.LED;
+            dataTab2.Location = new System.Drawing.Point(3, 3);
+            dataTab2.Name = "dataTab2";
+            dataTab2.RegisterData = new ushort[] {
+        ((ushort)(0))};
+            dataTab2.ShowDataLength = false;
+            dataTab2.Size = new System.Drawing.Size(839, 406);
+            dataTab2.StartAddress = ((ushort)(4100));
+            dataTab2.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(dataTab1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(851, 411);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Address1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(dataTab2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(851, 411);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "...";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
@@ -170,7 +219,7 @@
             this.groupBox3.Controls.Add(this.radioButtonBinary);
             this.groupBox3.Location = new System.Drawing.Point(7, 144);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(285, 110);
+            this.groupBox3.Size = new System.Drawing.Size(198, 110);
             this.groupBox3.TabIndex = 21;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Display Format";
@@ -187,9 +236,9 @@
             // 
             // radioButtonReverseFloat
             // 
-            this.radioButtonReverseFloat.Location = new System.Drawing.Point(105, 47);
+            this.radioButtonReverseFloat.Location = new System.Drawing.Point(102, 40);
             this.radioButtonReverseFloat.Name = "radioButtonReverseFloat";
-            this.radioButtonReverseFloat.Size = new System.Drawing.Size(96, 21);
+            this.radioButtonReverseFloat.Size = new System.Drawing.Size(90, 21);
             this.radioButtonReverseFloat.TabIndex = 5;
             this.radioButtonReverseFloat.Tag = "FloatReverse";
             this.radioButtonReverseFloat.Text = "FloatReverse";
@@ -198,7 +247,7 @@
             // radioButtonInteger
             // 
             this.radioButtonInteger.Checked = true;
-            this.radioButtonInteger.Location = new System.Drawing.Point(105, 20);
+            this.radioButtonInteger.Location = new System.Drawing.Point(102, 19);
             this.radioButtonInteger.Name = "radioButtonInteger";
             this.radioButtonInteger.Size = new System.Drawing.Size(67, 21);
             this.radioButtonInteger.TabIndex = 4;
@@ -327,6 +376,8 @@
             // 
             this.comboBoxParity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxParity.FormattingEnabled = true;
+            this.comboBoxParity.Items.AddRange(new object[] {
+            "None"});
             this.comboBoxParity.Location = new System.Drawing.Point(80, 74);
             this.comboBoxParity.Name = "comboBoxParity";
             this.comboBoxParity.Size = new System.Drawing.Size(94, 21);
@@ -370,6 +421,8 @@
             // 
             this.comboBoxSerialPorts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSerialPorts.FormattingEnabled = true;
+            this.comboBoxSerialPorts.Items.AddRange(new object[] {
+            "None"});
             this.comboBoxSerialPorts.Location = new System.Drawing.Point(80, 19);
             this.comboBoxSerialPorts.Name = "comboBoxSerialPorts";
             this.comboBoxSerialPorts.Size = new System.Drawing.Size(94, 21);
@@ -518,52 +571,6 @@
             this.tabControl1.TabIndex = 35;
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.dataTab1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(851, 411);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Address1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // dataTab1
-            // 
-            this.dataTab1.DataLength = ((ushort)(127));
-            this.dataTab1.DisplayFormat = Modbus.Common.DisplayFormat.Integer;
-            this.dataTab1.Location = new System.Drawing.Point(3, 3);
-            this.dataTab1.Name = "dataTab1";
-            this.dataTab1.RegisterData = null;
-            this.dataTab1.ShowDataLength = true;
-            this.dataTab1.Size = new System.Drawing.Size(839, 406);
-            this.dataTab1.StartAddress = ((ushort)(4100));
-            this.dataTab1.TabIndex = 0;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.dataTab2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(851, 411);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "...";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dataTab2
-            // 
-            this.dataTab2.DataLength = ((ushort)(127));
-            this.dataTab2.DisplayFormat = Modbus.Common.DisplayFormat.LED;
-            this.dataTab2.Location = new System.Drawing.Point(3, 3);
-            this.dataTab2.Name = "dataTab2";
-            this.dataTab2.RegisterData = null;
-            this.dataTab2.ShowDataLength = false;
-            this.dataTab2.Size = new System.Drawing.Size(839, 406);
-            this.dataTab2.StartAddress = ((ushort)(4100));
-            this.dataTab2.TabIndex = 0;
-            // 
             // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -579,6 +586,8 @@
             this.Text = "Modbus Slave";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BaseFormClosing);
             this.Load += new System.EventHandler(this.BaseFormLoading);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.grpStart.ResumeLayout(false);
@@ -591,8 +600,6 @@
             this.grpExchange.ResumeLayout(false);
             this.grpExchange.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -636,13 +643,11 @@
         protected System.Windows.Forms.Label label9;
         protected System.Windows.Forms.ComboBox comboBoxParity;
         protected System.Windows.Forms.Label labelParity;
-        protected System.Windows.Forms.TabPage tabPage1;
-        protected System.Windows.Forms.TabPage tabPage2;
-        protected DataTab dataTab1;
-        protected DataTab dataTab2;
         protected System.Windows.Forms.GroupBox grpExchange;
         protected System.Windows.Forms.Button buttonPauseLog;
         protected TabControlEx tabControl1;
         protected System.Windows.Forms.RadioButton radioButtonReverseFloat;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }

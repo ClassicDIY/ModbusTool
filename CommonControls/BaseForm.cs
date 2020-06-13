@@ -26,7 +26,7 @@ namespace Modbus.Common
             InitializeComponent();
             _registerData = new ushort[65600];
         }
-        
+
         private void BaseFormLoading(object sender, EventArgs e)
         {
             comboBoxBaudRate.SelectedIndex = 4;
@@ -321,6 +321,8 @@ namespace Modbus.Common
         }
 
         private ushort _dataLength;
+        private bool showDataLength;
+
         protected ushort DataLength
         {
             get
@@ -330,12 +332,26 @@ namespace Modbus.Common
             set
             {
                 _dataLength = value;
-                CurrentTab.DataLength =value;
+                CurrentTab.DataLength = value;
             }
         }
 
-        public bool ShowDataLength { get; set; }
-
+        public bool ShowDataLength
+        {
+            get => showDataLength;
+            set
+            {
+                showDataLength = value;
+                foreach (DataTab tab in tabPage1.Controls)
+                {
+                    tab.ShowDataLength = value;
+                }
+                foreach (DataTab tab in tabPage2.Controls)
+                {
+                    tab.ShowDataLength = value;
+                }
+            }
+        }
         protected IPAddress IPAddress
         {
             get
@@ -681,7 +697,7 @@ namespace Modbus.Common
                 dataTab.DataLength = 256;
                 dataTab.DisplayFormat = DisplayFormat.Integer;
                 dataTab.Location = new Point(3, 3);
-                dataTab.Name = "dataTab" + (tabControl1.TabPages.Count+1);
+                dataTab.Name = "dataTab" + (tabControl1.TabPages.Count + 1);
                 dataTab.RegisterData = _registerData;
                 dataTab.ShowDataLength = ShowDataLength;
                 dataTab.Size = new Size(839, 406);

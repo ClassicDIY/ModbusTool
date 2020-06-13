@@ -42,21 +42,9 @@
             this.groupBoxRTU.SuspendLayout();
             this.groupBoxMode.SuspendLayout();
             this.groupBoxTCP.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.grpExchange.SuspendLayout();
-            this.tabControl1.SuspendLayout();
             this.groupBoxFunctions.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // comboBoxSerialPorts
-            // 
-            this.comboBoxSerialPorts.Items.AddRange(new object[] {
-            "COM1",
-            "COM2",
-            "COM3",
-            "COM4",
-            "COM5"});
             // 
             // label8
             // 
@@ -65,16 +53,6 @@
             // txtIP
             // 
             this.txtIP.Visible = false;
-            // 
-            // comboBoxParity
-            // 
-            this.comboBoxParity.Items.AddRange(new object[] {
-            "None",
-            "Odd",
-            "Even",
-            "Mark",
-            "Space"});
-           
             // 
             // buttonDisconnect
             // 
@@ -177,11 +155,8 @@
             this.groupBoxMode.PerformLayout();
             this.groupBoxTCP.ResumeLayout(false);
             this.groupBoxTCP.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             this.grpExchange.ResumeLayout(false);
             this.grpExchange.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
             this.groupBoxFunctions.ResumeLayout(false);
             this.ResumeLayout(false);
 
