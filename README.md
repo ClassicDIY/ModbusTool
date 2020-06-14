@@ -18,6 +18,8 @@ Please refer to the <a href="https://github.com/ClassicDIY/ModbusTool/wiki">Modb
 <img src="./Pictures/Slave.PNG" width="600"/>
 </p>
 
-
+<p>
+The software is provided "AS IS", WITHOUT WARRANTY OF ANY KIND, express or implied.
+</p>
 
 
