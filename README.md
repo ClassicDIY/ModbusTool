@@ -15,7 +15,7 @@ Please refer to the <a href="https://github.com/ClassicDIY/ModbusTool/wiki">Modb
 </p>
 
 <p align="center">
-<img src="./Pictures/Slave.PNG" width="600"/>
+<img src="./Pictures/Master.PNG" width="600"/>
 </p>
 
 ## License
