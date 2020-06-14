@@ -29,7 +29,7 @@ namespace ModbusLib.Protocols
         event ModbusCommand.IncommingData IncommingData;
 
         void OnOutgoingData(byte[] data);
-        void OnIncommingData(byte[] data);
+        void OnIncommingData(byte[] data, int len);
 
 
     }

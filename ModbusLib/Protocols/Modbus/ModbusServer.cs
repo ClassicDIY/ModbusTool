@@ -41,9 +41,9 @@ namespace ModbusLib.Protocols
             if (OutgoingData != null) OutgoingData(data);
         }
 
-        public void OnIncommingData(byte[] data)
+        public void OnIncommingData(byte[] data, int len)
         {
-            if (IncommingData != null) IncommingData(data);
+            if (IncommingData != null) IncommingData(data, len);
         }
 
         /// <summary>

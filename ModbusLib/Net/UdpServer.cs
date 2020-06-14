@@ -55,7 +55,7 @@ namespace ModbusLib
                     Port.ReceiveFrom(
                         buffer,
                         ref remote);
-                    Protocol.OnIncommingData(buffer);
+                    Protocol.OnIncommingData(buffer, length);
                     //try to decode the incoming data
                     var data = new ServerCommData(Protocol) {IncomingData = new ByteArrayReader(buffer)};
 

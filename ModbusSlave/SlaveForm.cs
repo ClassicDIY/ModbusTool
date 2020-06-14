@@ -28,25 +28,13 @@ namespace ModbusSlave
 
         private void SlaveFormClosing(object sender, FormClosingEventArgs e)
         {
-            SaveUserData();
             DoDisconnect();
         }
 
         private void SlaveFormLoading(object sender, EventArgs e)
         {
-            LoadUserData();
         }
 
-        private void LoadUserData()
-        {
-            FunctionCode = Modbus.Common.Properties.Settings.Default.Function;
-        }
-
-        private void SaveUserData()
-        {
-            Modbus.Common.Properties.Settings.Default.Function = FunctionCode;
-            Modbus.Common.Properties.Settings.Default.Save();
-        }
 
         #endregion
 
@@ -103,7 +91,6 @@ namespace ModbusSlave
             btnConnect.Enabled = false;
             buttonDisconnect.Enabled = true;
             grpExchange.Enabled = true;
-            groupBoxFunctions.Enabled = false;
             groupBoxTCP.Enabled = false;
             groupBoxRTU.Enabled = false;
             groupBoxMode.Enabled = false;
@@ -143,7 +130,6 @@ namespace ModbusSlave
             buttonDisconnect.Enabled = false;
             grpExchange.Enabled = true;
             groupBoxMode.Enabled = true;
-            groupBoxFunctions.Enabled = true;
             SetMode();
             AppendLog("Disconnected");
         }
@@ -195,129 +181,26 @@ namespace ModbusSlave
             switch (command.FunctionCode)
             {
                 case ModbusCommand.FuncReadCoils:
-                    if (_function == Function.CoilStatus)
-                        DoRead(command);
-                    else
-                        IllegalFunction(command);
-                    break;
                 case ModbusCommand.FuncReadInputDiscretes:
-                    if (_function == Function.InputStatus)
-                        DoRead(command);
-                    else
-                        IllegalFunction(command);
-                    break;
                 case ModbusCommand.FuncReadInputRegisters:
-                    if (_function == Function.InputRegister)
-                        DoRead(command);
-                    else
-                        IllegalFunction(command);
-                    break;
                 case ModbusCommand.FuncReadMultipleRegisters:
-                    if (_function == Function.HoldingRegister)
-                        DoRead(command);
-                    else
-                        IllegalFunction(command);
+                case ModbusCommand.FuncReadCustom:
+                    DoRead(command);
                     break;
 
                 case ModbusCommand.FuncWriteCoil:
-                    if (_function == Function.CoilStatus)
-                        DoWrite(command);
-                    else
-                        IllegalFunction(command);
-                    break;
-
                 case ModbusCommand.FuncForceMultipleCoils:
-                    if (_function == Function.CoilStatus)
-                        DoWrite(command);
-                    else
-                        IllegalFunction(command);
-                    break;
                 case ModbusCommand.FuncWriteMultipleRegisters:
-                    if (_function == Function.HoldingRegister)
-                        DoWrite(command);
-                    else
-                        IllegalFunction(command);
-                    break;
                 case ModbusCommand.FuncWriteSingleRegister:
-                    if (_function == Function.HoldingRegister)
-                        DoWrite(command);
-                    else
-                        IllegalFunction(command);
+                    DoWrite(command);
                     break;
-                case ModbusCommand.FuncReadExceptionStatus:
-                    //TODO
-                    break;
-
-                case ModbusCommand.FuncReadCustom:
-                    if (_function == Function.HoldingRegister)
-                    {
-                        for (int i = 0; i < command.Count; i++)
-                            command.Data[i] = _registerData[command.Offset + i];
-                    }
-                    else
-                        IllegalFunction(command);
-                    break;
-
                 default:
+                    AppendLog(String.Format("Illegal Function, expecting function code {0}.", command.FunctionCode));
                     //return an exception
                     command.ExceptionCode = ModbusCommand.ErrorIllegalFunction;
                     break;
             }
         }
-
-        private void IllegalFunction(ModbusCommand command)
-        {
-            AppendLog(String.Format("Illegal Function, expecting function code {0}.", FunctionCode));
-            command.ExceptionCode = ModbusCommand.ErrorIllegalFunction;
-        }
-
-        private byte FunctionCode
-        {
-            get
-            {
-                byte rVal = ModbusCommand.ErrorIllegalFunction;
-                switch (_function)
-                {
-                    case Function.CoilStatus:
-                        rVal = ModbusCommand.FuncReadCoils;
-                        break;
-                    case Function.HoldingRegister:
-                        rVal = ModbusCommand.FuncReadMultipleRegisters;
-                        break;
-                    case Function.InputRegister:
-                        rVal = ModbusCommand.FuncReadInputRegisters;
-                        break;
-                    case Function.InputStatus:
-                        rVal = ModbusCommand.FuncReadInputDiscretes;
-                        break;
-
-                }
-                return rVal;
-            }
-            set
-            {
-                switch (value)
-                {
-                    case ModbusCommand.FuncReadCoils:
-                        radioButtonCoilStatus.Checked = true;
-                        _function = Function.CoilStatus;
-                        break;
-                    case ModbusCommand.FuncReadInputDiscretes:
-                        radioButtonInputStatus.Checked = true;
-                        _function = Function.InputStatus;
-                        break;
-                    case ModbusCommand.FuncReadInputRegisters:
-                        radioButtonInputRegisters.Checked = true;
-                        _function = Function.InputRegister;
-                        break;
-                    case ModbusCommand.FuncReadMultipleRegisters:
-                        radioButtonHoldingRegister.Checked = true;
-                        _function = Function.HoldingRegister;
-                        break;
-                }
-            }
-        }
-
 
         private void DoRead(ModbusCommand command)
         {

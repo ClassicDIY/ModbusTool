@@ -597,13 +597,15 @@ namespace Modbus.Common
             buttonPauseLog.Text = _logPaused ? "Resume" : "Pause";
         }
 
-        protected void DriverIncommingData(byte[] data)
+        protected void DriverIncommingData(byte[] data, int len)
         {
             if (_logPaused)
                 return;
-            var hex = new StringBuilder(data.Length * 2);
-            foreach (byte b in data)
-                hex.AppendFormat("{0:x2} ", b);
+            var hex = new StringBuilder(len);
+            for(int i = 0; i < len; i++)
+            {
+                hex.AppendFormat("{0:x2} ", data[i]);
+            }
             AppendLog(String.Format("RX: {0}", hex));
         }
 

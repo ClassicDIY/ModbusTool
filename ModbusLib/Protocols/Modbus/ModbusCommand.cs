@@ -70,7 +70,7 @@ namespace ModbusLib.Protocols
         public const byte ErrorMemoryParity = 8;
 
         public delegate void OutgoingData(byte[] data);
-        public delegate void IncommingData(byte[] data);
+        public delegate void IncommingData(byte[] data, int len);
         
         public ModbusCommand(byte fc)
         {

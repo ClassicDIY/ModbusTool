@@ -64,7 +64,7 @@ namespace ModbusLib
                             length = CacheSize;
                         //read the data from the physical port
                         Port.Receive(buffer, length, SocketFlags.None);
-                        Protocol.OnIncommingData(buffer);
+                        Protocol.OnIncommingData(buffer, length);
                         //append the data to the writer
                         if (writer == null)
                             writer = new ByteArrayWriter();

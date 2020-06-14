@@ -76,7 +76,7 @@ namespace ModbusLib
                         buffer,
                         0,
                         length);
-                    Protocol.OnIncommingData(buffer);
+                    Protocol.OnIncommingData(buffer, length);
                     //append the data to the writer
                     if (writer == null)
                         writer = new ByteArrayWriter();

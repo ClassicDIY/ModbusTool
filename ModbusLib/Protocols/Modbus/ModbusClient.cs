@@ -39,9 +39,9 @@ namespace ModbusLib.Protocols
             if (OutgoingData != null) OutgoingData(data);
         }
 
-        public void OnIncommingData(byte[] data)
+        public void OnIncommingData(byte[] data, int len)
         {
-            if (IncommingData != null) IncommingData(data);
+            if (IncommingData != null) IncommingData(data, len);
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace ModbusLib.Protocols
             if (data.OutgoingData != null)
                 OnOutgoingData(data.OutgoingData.ToArray());
             if (data.IncomingData != null)
-                OnIncommingData(data.IncomingData.ToArray());
+                OnIncommingData(data.IncomingData.ToArray(), data.IncomingData.Length);
             return rVal;
         }
 
