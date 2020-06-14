@@ -22,4 +22,36 @@ Please refer to the <a href="https://github.com/ClassicDIY/ModbusTool/wiki">Modb
 The software is provided "AS IS", WITHOUT WARRANTY OF ANY KIND, express or implied.
 </p>
 
+## License
+```
 
+ Copyright (c) 2020. ClassicDIY
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+```
+
+
+Release notes:
+
+-----------------
+
+version 2.0.1.0
+
+<ul>
+<li>Removed function restrictions from ModbusSlave</li>
+<li>Fixed Slave Log of rx data</li>
+<li>Merged PR that adds polling and Float view</li>
+</ul>
+
+-----------------
