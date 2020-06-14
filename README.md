@@ -14,8 +14,6 @@
 Please refer to the <a href="https://github.com/ClassicDIY/ModbusTool/wiki">ModbusTool wiki</a> for the installation procedure.
 </p>
 
-<p>Icons were forked from images of Freepik resp. pongsakornRed from Flaticon.com</p>
-
 <p align="center">
 <img src="./Pictures/Slave.PNG" width="600"/>
 </p>
