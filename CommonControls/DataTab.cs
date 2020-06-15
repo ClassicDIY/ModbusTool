@@ -56,7 +56,7 @@ namespace Modbus.Common
                 ushort rVal = 64;
                 try
                 {
-                    if (txtSize.Text.IndexOf("0x", 0, txtSize.Text.Length) == 0)
+                    if (txtSize.Text.StartsWith("0x", StringComparison.InvariantCultureIgnoreCase))
                     {
                         string str = txtSize.Text.Replace("0x", "");
                         rVal = Convert.ToUInt16(str, 16);
@@ -72,7 +72,13 @@ namespace Modbus.Common
             }
             set
             {
-                txtSize.Text = Convert.ToString(value);
+                if (txtSize.Text.StartsWith("0x", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    // obey hex input
+                    txtSize.Text = "0x"+Convert.ToString(value, 16);
+                }
+                else
+                    txtSize.Text = Convert.ToString(value);
             }
         }
 
