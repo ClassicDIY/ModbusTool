@@ -61,7 +61,8 @@ namespace Modbus.Common
                         string str = txtSize.Text.Replace("0x", "");
                         rVal = Convert.ToUInt16(str, 16);
                     }
-                    rVal = Convert.ToUInt16(txtSize.Text);
+                    else
+                        rVal = Convert.ToUInt16(txtSize.Text);
                 }
                 catch (Exception)
                 {
