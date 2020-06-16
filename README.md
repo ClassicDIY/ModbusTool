@@ -42,6 +42,13 @@ Release notes:
 
 -----------------
 
+version 2.0.1.1
+<ul>
+<li>Merged <a href="https://github.com/ClassicDIY/ModbusTool/pull/18">PR</a> to fix <a href="https://github.com/ClassicDIY/ModbusTool/issues/17">issue 17</a></li>
+</ul>
+
+-----------------
+
 version 2.0.1.0
 
 <ul>
