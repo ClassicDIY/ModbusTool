@@ -2,6 +2,7 @@
 using System.IO.Ports;
 using System.Net;
 using System.Net.Sockets;
+using System.Reflection;
 using System.Windows.Forms;
 using Modbus.Common;
 using ModbusLib;
@@ -23,6 +24,7 @@ namespace ModbusMaster
         public MasterForm()
         {
             InitializeComponent();
+            this.Text += String.Format(" ({0})", Assembly.GetExecutingAssembly().GetName().Version.ToString());
         }
 
         private void MasterFormClosing(object sender, FormClosingEventArgs e)
@@ -272,6 +274,11 @@ namespace ModbusMaster
         {
             if (_lastReadCommand != 0)
                 ExecuteReadCommand(_lastReadCommand);
+        }
+
+        private void MasterForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

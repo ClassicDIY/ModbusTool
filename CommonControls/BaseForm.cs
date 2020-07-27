@@ -731,5 +731,23 @@ namespace Modbus.Common
             _startAddress = address;
             _dataLength = CurrentTab.DataLength;
         }
+
+        private void donate_Click(object sender, EventArgs e)
+        {
+            string url = "";
+
+            string business = "graham.a.ross@gmail.com";
+            string description = "Support%20ModbusTool%20development";
+            string currency = "USD";
+
+            url += "https://www.paypal.com/cgi-bin/webscr" +
+                "?cmd=" + "_donations" +
+                "&business=" + business +
+                "&item_name=" + description +
+                "&currency_code=" + currency +
+                "&source=url";
+
+            System.Diagnostics.Process.Start(url);
+        }
     }
 }

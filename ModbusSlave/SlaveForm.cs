@@ -2,6 +2,7 @@
 using System.IO.Ports;
 using System.Net;
 using System.Net.Sockets;
+using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
 using Modbus.Common;
@@ -24,6 +25,7 @@ namespace ModbusSlave
         {
             base.ShowDataLength = false;
             InitializeComponent();
+            this.Text += String.Format(" ({0})", Assembly.GetExecutingAssembly().GetName().Version.ToString());
         }
 
         private void SlaveFormClosing(object sender, FormClosingEventArgs e)
