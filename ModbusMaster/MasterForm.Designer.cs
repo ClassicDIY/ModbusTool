@@ -24,6 +24,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterForm));
             this.groupBoxFunctions = new System.Windows.Forms.GroupBox();
             this.txtPollDelay = new System.Windows.Forms.TextBox();
@@ -38,6 +39,7 @@
             this.btnWriteSingleCoil = new System.Windows.Forms.Button();
             this.buttonDisconnect = new System.Windows.Forms.Button();
             this.btnConnect = new System.Windows.Forms.Button();
+            this.pollTimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.grpStart.SuspendLayout();
@@ -203,6 +205,11 @@
             this.btnConnect.TabIndex = 36;
             this.btnConnect.Text = "Connect";
             this.btnConnect.Click += new System.EventHandler(this.BtnConnectClick);
+            // 
+            // pollTimer
+            // 
+            this.pollTimer.Interval = 2000;
+            this.pollTimer.Tick += new System.EventHandler(this.pollTimer_Tick);
             // 
             // MasterForm
             // 
