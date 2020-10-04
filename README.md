@@ -4,6 +4,8 @@
 |If you find this project useful or interesting, please help support further development!|[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=graham.a.ross%40gmail.com&item_name=Support+ModbusTool+development&currency_code=USD&source=url)|
 |---|---|
 
+[![HitCount](http://hits.dwyl.com/ClassicDIY/ModbusTool.svg)](http://hits.dwyl.com/ClassicDIY/ModbusTool)
+
 [![GitHub All Releases](https://img.shields.io/github/downloads/ClassicDIY/ModbusTool/total?style=for-the-badge)](https://github.com/ClassicDIY/ModbusTool/releases)
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/ClassicDIY/ModbusTool?style=for-the-badge)](https://github.com/ClassicDIY/ModbusTool/releases)
 [![GitHub stars](https://img.shields.io/github/stars/ClassicDIY/ModbusTool?style=for-the-badge)](https://github.com/ClassicDIY/ModbusTool/stargazers)
