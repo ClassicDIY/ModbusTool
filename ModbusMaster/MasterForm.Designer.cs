@@ -265,5 +265,6 @@
         private System.Windows.Forms.TextBox txtPollDelay;
         private System.Windows.Forms.CheckBox cbPoll;
         private System.Windows.Forms.Timer pollTimer;
+        private System.ComponentModel.IContainer components;
     }
 }
