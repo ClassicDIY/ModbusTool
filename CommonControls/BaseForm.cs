@@ -734,7 +734,7 @@ namespace Modbus.Common
 
         private void donate_Click(object sender, EventArgs e)
         {
-            string url = "https://paypal.me/classicdiy?country.x=CA&locale.x=en_US";
+            string url = "https://www.buymeacoffee.com/r4K2HIB";
             System.Diagnostics.Process.Start(url);
         }
     }

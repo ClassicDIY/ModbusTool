@@ -89,6 +89,31 @@
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
+            // dataTab1
+            // 
+            dataTab1.DataLength = ((ushort)(127));
+            dataTab1.DisplayFormat = Modbus.Common.DisplayFormat.Integer;
+            dataTab1.Location = new System.Drawing.Point(3, 3);
+            dataTab1.Name = "dataTab1";
+            dataTab1.RegisterData = new ushort[0];
+            dataTab1.ShowDataLength = false;
+            dataTab1.Size = new System.Drawing.Size(839, 406);
+            dataTab1.StartAddress = ((ushort)(4100));
+            dataTab1.TabIndex = 0;
+            // 
+            // dataTab2
+            // 
+            dataTab2.DataLength = ((ushort)(127));
+            dataTab2.DisplayFormat = Modbus.Common.DisplayFormat.LED;
+            dataTab2.Location = new System.Drawing.Point(3, 3);
+            dataTab2.Name = "dataTab2";
+            dataTab2.RegisterData = new ushort[] {
+        ((ushort)(0))};
+            dataTab2.ShowDataLength = false;
+            dataTab2.Size = new System.Drawing.Size(839, 406);
+            dataTab2.StartAddress = ((ushort)(4100));
+            dataTab2.TabIndex = 0;
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.buttonPauseLog);
@@ -514,7 +539,7 @@
             // 
             // donate
             // 
-            this.donate.Image = global::Modbus.Common.Properties.Resources.btn_donateCC_LG;
+            this.donate.Image = global::Modbus.Common.Properties.Resources.default_yellowS2;
             this.donate.Location = new System.Drawing.Point(691, 77);
             this.donate.Name = "donate";
             this.donate.Size = new System.Drawing.Size(154, 61);
@@ -546,18 +571,6 @@
             this.tabPage1.Text = "Address1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dataTab1
-            // 
-            dataTab1.DataLength = ((ushort)(127));
-            dataTab1.DisplayFormat = Modbus.Common.DisplayFormat.Integer;
-            dataTab1.Location = new System.Drawing.Point(3, 3);
-            dataTab1.Name = "dataTab1";
-            dataTab1.RegisterData = new ushort[0];
-            dataTab1.ShowDataLength = false;
-            dataTab1.Size = new System.Drawing.Size(839, 406);
-            dataTab1.StartAddress = ((ushort)(4100));
-            dataTab1.TabIndex = 0;
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(dataTab2);
@@ -568,19 +581,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "...";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dataTab2
-            // 
-            dataTab2.DataLength = ((ushort)(127));
-            dataTab2.DisplayFormat = Modbus.Common.DisplayFormat.LED;
-            dataTab2.Location = new System.Drawing.Point(3, 3);
-            dataTab2.Name = "dataTab2";
-            dataTab2.RegisterData = new ushort[] {
-        ((ushort)(0))};
-            dataTab2.ShowDataLength = false;
-            dataTab2.Size = new System.Drawing.Size(839, 406);
-            dataTab2.StartAddress = ((ushort)(4100));
-            dataTab2.TabIndex = 0;
             // 
             // BaseForm
             // 
