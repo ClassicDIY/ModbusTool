@@ -32,6 +32,7 @@
             Modbus.Common.DataTab dataTab2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseForm));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.buttonPauseLog = new System.Windows.Forms.Button();
             this.listBoxCommLog = new System.Windows.Forms.ListBox();
             this.buttonClear = new System.Windows.Forms.Button();
@@ -116,6 +117,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.buttonSave);
             this.groupBox4.Controls.Add(this.buttonPauseLog);
             this.groupBox4.Controls.Add(this.listBoxCommLog);
             this.groupBox4.Controls.Add(this.buttonClear);
@@ -126,9 +128,18 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Communication Log";
             // 
+            // buttonSave
+            // 
+            this.buttonSave.Location = new System.Drawing.Point(760, 19);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(86, 28);
+            this.buttonSave.TabIndex = 26;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.Click += new System.EventHandler(this.buttonSaveLog_ClickAsync);
+            // 
             // buttonPauseLog
             // 
-            this.buttonPauseLog.Location = new System.Drawing.Point(660, 19);
+            this.buttonPauseLog.Location = new System.Drawing.Point(576, 19);
             this.buttonPauseLog.Name = "buttonPauseLog";
             this.buttonPauseLog.Size = new System.Drawing.Size(86, 28);
             this.buttonPauseLog.TabIndex = 25;
@@ -148,7 +159,7 @@
             // 
             // buttonClear
             // 
-            this.buttonClear.Location = new System.Drawing.Point(752, 19);
+            this.buttonClear.Location = new System.Drawing.Point(668, 19);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(86, 28);
             this.buttonClear.TabIndex = 24;
@@ -662,5 +673,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button donate;
+        protected System.Windows.Forms.Button buttonSave;
     }
 }

@@ -7,7 +7,9 @@ using System.IO.Ports;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.LinkLabel;
 
 namespace Modbus.Common
 {
@@ -597,6 +599,25 @@ namespace Modbus.Common
             buttonPauseLog.Text = _logPaused ? "Resume" : "Pause";
         }
 
+        private async void buttonSaveLog_ClickAsync(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.FileName = "ModbusLog";
+            saveFileDialog.OverwritePrompt = true;
+            saveFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFileDialog.DefaultExt = "txt";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter writer = new StreamWriter(saveFileDialog.FileName, append: true))
+                {
+                    foreach (string line in listBoxCommLog.Items)
+                    {
+                        await writer.WriteLineAsync(line);
+                    }
+                }
+            }
+        }
+
         protected void DriverIncommingData(byte[] data, int len)
         {
             if (_logPaused)
@@ -632,7 +653,7 @@ namespace Modbus.Common
             var tmpStr = ">" + now.ToLongTimeString() + ": " + log;
             listBoxCommLog.Items.Add(tmpStr);
             listBoxCommLog.SelectedIndex = listBoxCommLog.Items.Count - 1;
-            listBoxCommLog.SelectedIndex = -1;
+            //listBoxCommLog.SelectedIndex = -1;
         }
 
         #endregion
@@ -737,5 +758,6 @@ namespace Modbus.Common
             string url = "https://www.buymeacoffee.com/r4K2HIB";
             System.Diagnostics.Process.Start(url);
         }
+
     }
 }
