@@ -11,13 +11,38 @@
 [![GitHub issues](https://img.shields.io/github/issues-raw/ClassicDIY/ModbusTool?style=for-the-badge)](https://github.com/ClassicDIY/ModbusTool/issues)
 [![GitHub](https://img.shields.io/github/license/ClassicDIY/ModbusTool?style=for-the-badge)](https://github.com/ClassicDIY/ModbusTool/blob/master/LICENSE)
 
-<p>
-Please refer to the <a href="https://github.com/ClassicDIY/ModbusTool/wiki">ModbusTool wiki</a> for the installation procedure.
-</p>
-
 <p align="center">
 <img src="./Pictures/Master.PNG" width="600"/>
 </p>
+
+## Installation
+
+There are two options available to download and install ModbusTool.
+
+### Option 1: Download from Github Releases
+
+1. Visit the [Github Releases page](https://github.com/ClassicDIY/ModbusTool/releases) of ModbusTool.
+2. Choose `ModbusTool.msi` to downloaad.
+3. Once the file is downloaded, double-click on it to initiate the installation process.
+4. Follow the on-screen instructions to complete the installation.
+
+For detailed installation instructions and additional information, refer to the [Github Wiki tutorial](https://github.com/ClassicDIY/ModbusTool/wiki) dedicated to this option.
+
+### Option 2: Install using `winget`
+
+> `Winget` is a command-line package manager for Windows that allows users to quickly and easily install, manage, and uninstall software applications from the terminal.
+
+1. Ensure that you have `winget` installed on your system. If not, follow the instructions to install `winget` from the official Microsoft [documentation](https://learn.microsoft.com/en-us/windows/package-manager/winget/).
+2. Open a powershell or terminal window.
+3. Execute the following command to install ModbusTool using `winget`:
+
+```shell
+winget install ClassicDIY.ModbusTool
+```
+
+4. Wait for the installation process to complete.
+
+Once installed, you can launch ModbusTool and start using its master and slave test functionalities with import and export capabilities.
 
 ## License
 ```
@@ -39,7 +64,7 @@ Please refer to the <a href="https://github.com/ClassicDIY/ModbusTool/wiki">Modb
 ```
 
 
-Release notes:
+## Release notes
 
 -----------------
 
