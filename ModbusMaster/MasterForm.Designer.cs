@@ -218,7 +218,10 @@
             this.Controls.Add(this.buttonDisconnect);
             this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.groupBoxFunctions);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MasterForm";
             this.ShowDataLength = true;
             this.Text = "Modbus Master";
