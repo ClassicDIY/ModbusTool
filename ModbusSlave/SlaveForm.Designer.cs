@@ -68,7 +68,10 @@
             this.ClientSize = new System.Drawing.Size(869, 887);
             this.Controls.Add(this.buttonDisconnect);
             this.Controls.Add(this.btnConnect);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SlaveForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SlaveFormClosing);
             this.Load += new System.EventHandler(this.SlaveFormLoading);
