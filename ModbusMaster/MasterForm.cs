@@ -272,6 +272,10 @@ namespace ModbusMaster
 
         private void pollTimer_Tick(object sender, EventArgs e)
         {
+            // disconnected state, skip
+            if (groupBoxFunctions.Enabled == false)
+                return;
+
             if (_lastReadCommand != 0)
                 ExecuteReadCommand(_lastReadCommand);
         }
