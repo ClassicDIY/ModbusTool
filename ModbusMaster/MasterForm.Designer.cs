@@ -63,6 +63,10 @@
             this.radioButtonInteger.Location = new System.Drawing.Point(86, 20);
             this.radioButtonInteger.Size = new System.Drawing.Size(64, 21);
             // 
+            // grpStart
+            // 
+            this.grpStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            // 
             // label1
             // 
             this.label1.Visible = false;
@@ -214,14 +218,12 @@
             // MasterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(869, 917);
             this.Controls.Add(this.buttonDisconnect);
             this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.groupBoxFunctions);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "MasterForm";
             this.ShowDataLength = true;
             this.Text = "Modbus Master";

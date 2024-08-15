@@ -36,6 +36,10 @@
             this.grpExchange.SuspendLayout();
             this.SuspendLayout();
             // 
+            // grpStart
+            // 
+            this.grpStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            // 
             // label8
             // 
             this.label8.Visible = false;
@@ -65,13 +69,11 @@
             // SlaveForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(869, 887);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(869, 896);
             this.Controls.Add(this.buttonDisconnect);
             this.Controls.Add(this.btnConnect);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "SlaveForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SlaveFormClosing);
             this.Load += new System.EventHandler(this.SlaveFormLoading);
