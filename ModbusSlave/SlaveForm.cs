@@ -154,6 +154,13 @@ namespace ModbusSlave
                 _uart.Dispose();
                 _uart = null;
             }
+
+            if (_socket != null)
+            {
+                _socket.Dispose();
+                _socket = null;
+            }
+
             if (_thread != null && _thread.IsAlive)
             {
                 if (_thread.Join(2000) == false)
@@ -161,11 +168,6 @@ namespace ModbusSlave
                     _thread.Abort();
                     _thread = null;
                 }
-            }
-            if (_socket != null)
-            {
-                _socket.Dispose();
-                _socket = null;
             }
         }
 
